@@ -1,0 +1,4 @@
+Pillow - PIL
+transformers
+torch
+Pathlib
