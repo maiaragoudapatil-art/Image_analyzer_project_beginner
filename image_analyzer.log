@@ -1,0 +1,4 @@
+2026-07-30 14:40:18,713 - ERROR - Unexpected Error : [Errno 13] Permission denied: 'C:\\Users\\VijaySegunasi\\Documents\\analyzer_image\\test_image'
+2026-07-30 14:42:38,956 - ERROR - Unexpected Error : [Errno 13] Permission denied: 'C:\\Users\\VijaySegunasi\\Documents\\analyzer_image\\test_image'
+2026-07-30 14:43:56,970 - INFO - Image Opened : C:\Users\VijaySegunasi\Documents\analyzer_image\test_image\image.png
+2026-07-30 14:44:36,771 - INFO - Image Opened : C:\Users\VijaySegunasi\Documents\analyzer_image\p10.jpg
