@@ -43,7 +43,7 @@ def resize_image(image):
 
 # Function 5 - Save Image
 def save_image(image):
-    output_path = Path(r"C:\Users\VijaySegunasi\Documents\analyzer_image\test_image\new_image.jpg")
+    output_path = Path("image.png")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     image.save(output_path)
     print("Image Saved Successfully")

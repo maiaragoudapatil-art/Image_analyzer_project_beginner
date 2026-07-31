@@ -1,32 +1,18 @@
-"""
-Mini Project: Image Analyzer
-
-Concepts Used:
-1. Import
-2. Variables
-3. Functions
-4. OOP
-5. Loops
-6. Exception Handling
-7. Image Resize
-8. Image Properties
-"""
-
-from PIL import Image
-from PIL import UnidentifiedImageError
+from pathlib import Path
+from PIL import Image, UnidentifiedImageError
 
 
 class ImageAnalyzer:
 
     def __init__(self, image_path):
-        self.image_path = "C:/Users/VijaySegunasi/Documents/analyzer_image/test_image/image.png"
+        self.image_path = Path(image_path)
 
     def analyze(self):
         try:
             image = Image.open(self.image_path)
 
             print("\n-------------------------")
-            print("Image :", self.image_path)
+            print("Image :", self.image_path.name)
             print("Width :", image.width)
             print("Height :", image.height)
             print("Format :", image.format)
@@ -34,7 +20,11 @@ class ImageAnalyzer:
             print("Size :", image.size)
 
             resized = image.resize((300, 300))
-            output_name = "images/resized_" + self.image_path.split("/")[-1]
+
+            output_dir = Path(__file__).parent / "resized_images"
+            output_dir.mkdir(exist_ok=True)
+
+            output_name = output_dir / f"resized_{self.image_path.name}"
             resized.save(output_name)
 
             print("Resized image saved as:", output_name)
@@ -46,17 +36,18 @@ class ImageAnalyzer:
             print(f"{self.image_path} -> Invalid Image")
 
         except Exception as error:
-            print("Error :", error)
+            print("Error:", error)
 
 
 def main():
+    base_dir = Path(__file__).parent
 
     image_files = [
-        "images/sample.jpg",
-        "images/sample.png",
-        "images/sample.jpeg",
-        "images/sample.bmp",
-        "images/sample.webp"
+        base_dir / "p1.jpg",
+        base_dir / "p2.jpg",
+        base_dir / "p3.jfif",
+        base_dir / "p4.jpg",
+        base_dir / "p5.webp"
     ]
 
     for file in image_files:

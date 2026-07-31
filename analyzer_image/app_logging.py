@@ -8,12 +8,12 @@ Purpose:
 Store program activities and errors in a log file.
 """
 
-import logging
+import app_logging
 from PIL import Image
 # Create Log File
-logging.basicConfig(
+app_logging.basicConfig(
     filename="image_analyzer.log",
-    level=logging.INFO,
+    level=app_logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
@@ -26,7 +26,7 @@ def open_image(path):
 
         print("Image Opened Successfully")
 
-        logging.info(f"Image Opened : {path}")
+        app_logging.info(f"Image Opened : {path}")
 
         print("Width :", image.width)
         print("Height :", image.height)
@@ -36,13 +36,13 @@ def open_image(path):
 
         print("File Not Found")
 
-        logging.error(f"File Not Found : {path}")
+        app_logging.error(f"File Not Found : {path}")
 
     except Exception as error:
 
         print("Error :", error)
 
-        logging.error(f"Unexpected Error : {error}")
+        app_logging.error(f"Unexpected Error : {error}")
 
 
 # Main Program

@@ -1,18 +1,12 @@
-"""
-Concept Used:
-1. List
-2. For Loop
-
-Purpose:
-Read multiple images one by one.
-"""
-
+from pathlib import Path
 from PIL import Image
 
+BASE_DIR = Path(__file__).parent
+
 image_list = [
-    r"C:\Users\VijaySegunasi\Documents\analyzer_image\p1.jpg",
-    r"C:\Users\VijaySegunasi\Documents\analyzer_image\p2.jpg",
-    r"C:\Users\VijaySegunasi\Documents\analyzer_image\p3.jfif"
+    BASE_DIR / "p1.jpg",
+    BASE_DIR / "p2.jpg",
+    BASE_DIR / "p3.jfif"
 ]
 
 for image_path in image_list:
@@ -20,7 +14,7 @@ for image_path in image_list:
     image = Image.open(image_path)
 
     print("----------------")
-    print(image_path)
+    print(image_path.name)
     print("Width :", image.width)
     print("Height :", image.height)
     print("Format :", image.format)

@@ -13,8 +13,11 @@ from pathlib import Path
 from PIL import Image
 from PIL import UnidentifiedImageError
 
-image_folder = Path("C:/Users/VijaySegunasi/Documents/analyzer_image/test_image")
+
+BASE_DIR = Path(__file__).parent
+image_folder = BASE_DIR / "test_image"
 image_extensions = {".jpg", ".jpeg", ".jfif", ".png", ".webp", ".bmp", ".gif"}
+
 
 
 def get_image_path(user_input: str) -> str:
@@ -76,3 +79,6 @@ except Exception as error:
 
 finally:
     print("Program Finished.")
+    
+print(image_folder)
+print(image_folder.exists())

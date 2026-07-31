@@ -1,18 +1,11 @@
-"""
-Concept Used:
-1. Import
-2. Variables
-3. Image Open
-4. Image Show
-
-Purpose:
-Open an image and display it.
-"""
-
+from pathlib import Path
 from PIL import Image
 
+# Folder containing this Python file
+BASE_DIR = Path(__file__).parent
+
 # Image Path
-image_path = "C:/Users/VijaySegunasi/Documents/analyzer_image/test_image/image.png"
+image_path = BASE_DIR / "p1.jpg"
 
 # Open Image
 image = Image.open(image_path)
